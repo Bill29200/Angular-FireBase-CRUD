@@ -10,9 +10,9 @@
 			</button>
 			&nbsp;
 			<button class="btn btn-danger mt-3" (click)="onSupprimerTout()">
-				<i class="fa fa-trash"></i> All
+				<i class="fa fa-trash"></i> All<span class="badge badge-light">{{getNb()}}</span>
 			</button>
-
+			&nbsp;
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -72,6 +72,6 @@
 					</tr>
 				</tbody>
 			</table>
-
+			<h5 class="text-secondary">Total: {{getNb()}} </h5>
 		</div>
 	</div>

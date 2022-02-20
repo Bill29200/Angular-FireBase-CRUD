@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  nb:any;
   tableau: any[] = [];
   nom1:string = '';
   prenom1:string ='';
@@ -20,7 +21,7 @@ export class AppComponent {
   constructor(private httpClient: HttpClient) {}
   ngOnInit() {
     // je demande le noeud personne.json
-   
+   this.nb=this.getNb();
     this.httpClient.get<any>(this.url2).subscribe((response) => {
       console.log(response);
       if (response != undefined) {
@@ -86,9 +87,14 @@ export class AppComponent {
       console.log('delete ok !');
       this.tableau.splice(0, this.tableau.length);
     });
+       
     
-        
+  }
+  getNb()
+  {
+    {
       
-    
+      return this.tableau.length;
+  }
   }
 }
